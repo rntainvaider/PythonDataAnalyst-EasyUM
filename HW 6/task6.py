@@ -6,9 +6,7 @@ def get_list_assessments(count_assessments: int):
             list_assessments.append(numb)
         else:
             print("Оценка должна быть 3, 4 или 5!!!")
-    return list_assessments
 
-def count_assessments_in_list(list_assessments):
     count_fhree = 0
     count_four = 0
     count_five = 0
@@ -25,9 +23,19 @@ def count_assessments_in_list(list_assessments):
         if five == 5:
             count_five += 1
 
-    return count_fhree
+    if count_fhree > count_four and count_fhree > count_five:
+        return "Троек больше всего"
+    elif count_four > count_fhree and count_four > count_five:
+        return "Четверок больше всего" 
+    elif count_five > count_fhree and count_five > count_four:
+        return "Пятерок больше всего"
+    elif count_fhree == count_four and count_fhree == count_five:
+        return "Троек больше всего"
+    elif count_four == count_fhree and count_four == count_five:
+        return "Четверок больше всего" 
+    elif count_five == count_fhree and count_five == count_four:
+        return "Пятерок больше всего"
 
-count_assessments_in_list(get_list_assessments())
 
 while True:
     count_assessments = int(input("Введите количество оценок: "))
