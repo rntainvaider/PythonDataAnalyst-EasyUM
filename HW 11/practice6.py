@@ -1,4 +1,4 @@
-def frequency_histogram():
+def frequency_histogram() -> None:
     text_input = input("Введите текст: ")
     book_histogram = dict()
 
@@ -6,6 +6,11 @@ def frequency_histogram():
         if item not in book_histogram.keys():
             book_histogram[item] = text_input.count(item)
 
-    print(book_histogram)
+    for key, value in sorted(book_histogram.items()):
+        print(f"{key} : {value}")
+
+    max_values = max(book_histogram.values())
+
+    print(f"Максимальная частота: {max_values}")
 
 frequency_histogram()
